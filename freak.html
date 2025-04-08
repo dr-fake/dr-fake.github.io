@@ -154,6 +154,11 @@
       100% { transform: rotate(360deg); }
     }
 
+    /* Hidden game when loading */
+    .iframe-wrapper.loading iframe {
+      display: none;
+    }
+
     @media (max-width: 768px) {
       .sidebar {
         display: none;
@@ -178,7 +183,7 @@
       <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
       <button class="theme-toggle" onclick="toggleSidebar()">Toggle Sidebar</button>
     </div>
-    <div class="iframe-wrapper">
+    <div class="iframe-wrapper" id="iframeWrapper">
       <div class="loading-spinner" id="spinner"></div>
       <iframe id="gameFrame" src="" onload="hideSpinner()" allowfullscreen></iframe>
     </div>
@@ -188,6 +193,7 @@
     const body = document.body;
     const iframe = document.getElementById("gameFrame");
     const spinner = document.getElementById("spinner");
+    const iframeWrapper = document.getElementById("iframeWrapper");
     const sidebar = document.getElementById("sidebar");
 
     // Set theme from localStorage or system preference
@@ -223,10 +229,12 @@
     }
 
     function showSpinner() {
+      iframeWrapper.classList.add("loading");  // Hide iframe and show spinner
       spinner.style.display = "block"; // Show spinner
     }
 
     function hideSpinner() {
+      iframeWrapper.classList.remove("loading");  // Show iframe and hide spinner
       spinner.style.display = "none"; // Hide spinner when iframe has loaded
     }
   </script>
