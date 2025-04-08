@@ -9,6 +9,7 @@
       --nav-width: 240px;
       --transition-speed: 0.3s;
     }
+
     body {
       margin: 0;
       font-family: "Roboto", "Arial", sans-serif;
@@ -17,6 +18,7 @@
       overflow: hidden;
       transition: background-color var(--transition-speed), color var(--transition-speed);
     }
+
     body.light {
       --background: #f1f3f4;
       --nav-bg: #ffffff;
@@ -27,6 +29,7 @@
       background-color: var(--background);
       color: var(--text-color);
     }
+
     body.dark {
       --background: #121212;
       --nav-bg: #1e1e1e;
@@ -37,6 +40,7 @@
       background-color: var(--background);
       color: var(--text-color);
     }
+
     .sidebar {
       width: var(--nav-width);
       background: var(--nav-bg);
@@ -45,10 +49,12 @@
       display: flex;
       flex-direction: column;
     }
+
     .sidebar h2 {
       font-size: 18px;
       margin-bottom: 16px;
     }
+
     .nav-link {
       padding: 10px 0;
       color: var(--link-color);
@@ -56,14 +62,17 @@
       font-weight: 500;
       cursor: pointer;
     }
+
     .nav-link:hover {
       text-decoration: underline;
     }
+
     .main {
       flex: 1;
       display: flex;
       flex-direction: column;
     }
+
     .topbar {
       background: var(--main-bg);
       border-bottom: 1px solid var(--border);
@@ -74,17 +83,20 @@
       justify-content: space-between;
       align-items: center;
     }
+
     .iframe-wrapper {
       flex: 1;
       position: relative;
       overflow: hidden;
       background: #000;
     }
+
     iframe {
       width: 100%;
       height: 100%;
       border: none;
     }
+
     .theme-toggle {
       background: none;
       border: 1px solid var(--border);
@@ -95,9 +107,11 @@
       font-size: 14px;
       transition: background 0.2s;
     }
+
     .theme-toggle:hover {
       background: rgba(255, 255, 255, 0.05);
     }
+
     @media (max-width: 768px) {
       .sidebar {
         display: none;
@@ -112,6 +126,7 @@
     <a class="nav-link" onclick="loadGame('https://gyatmaster.web.app/volley-random')">Play Volley Random</a>
     <a class="nav-link" onclick="loadGame('https://gyatmaster.web.app/games/games11/basketrandom/index.html')">Play Basket Random</a>
   </div>
+
   <div class="main">
     <div class="topbar">
       <div>Gyatmaster Game Hub</div>
@@ -121,6 +136,7 @@
       <iframe id="gameFrame" src="https://gyatmaster.web.app" allowfullscreen></iframe>
     </div>
   </div>
+
   <script>
     const body = document.body;
     const iframe = document.getElementById("gameFrame");
@@ -141,17 +157,6 @@
 
     function loadGame(url) {
       iframe.src = url;
-    }
-
-    // Service Worker registration for caching static assets
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js')
-        .then(registration => {
-          console.log('Service Worker registered with scope:', registration.scope);
-        })
-        .catch(error => {
-          console.error('Service Worker registration failed:', error);
-        });
     }
   </script>
 </body>
