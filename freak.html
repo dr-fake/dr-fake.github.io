@@ -1,7 +1,9 @@
-<html lang="en"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Game Hub</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gyatmaster Game Site</title>
   <style>
     :root {
       --nav-width: 240px;
@@ -120,19 +122,16 @@
 <body class="dark">
   <div class="sidebar">
     <h2>Navigation</h2>
-    <a class="nav-link" onclick="loadGame('https://example.com/game1/index.html')">Game 1</a>
-    <a class="nav-link" onclick="loadGame('https://example.com/game2/index.html')">Game 2</a>
-    <a class="nav-link" onclick="loadGame('https://example.com/game3/index.html')">Game 3</a>
-    <a class="nav-link" onclick="loadGame('https://example.com/about.html')">About</a>
+    <a class="nav-link" onclick="loadGame('https://gyatmaster.web.app')">Play Gyatmaster</a>
   </div>
 
   <div class="main">
     <div class="topbar">
-      <div>Game Hub</div>
+      <div>Gyatmaster</div>
       <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
     </div>
     <div class="iframe-wrapper">
-      <iframe id="gameFrame" src="https://example.com/game1/index.html" allowfullscreen=""></iframe>
+      <iframe id="gameFrame" src="https://gyatmaster.web.app" allowfullscreen></iframe>
     </div>
   </div>
 
@@ -158,6 +157,5 @@
       iframe.src = url;
     }
   </script>
-
-
-</body></html>
+</body>
+</html>
